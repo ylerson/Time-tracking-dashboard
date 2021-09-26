@@ -4,7 +4,7 @@
 
     /* Primary Color */
     --blue-color  :hsl(246, 80%, 60%);
-    --light-red   : hsl(15, 100%, 70%);
+    --light-orange   : hsl(15, 100%, 70%);
     --soft-blue   : hsl(195, 74%, 62%);
     --light-red   : hsl(348, 100%, 68%);
     --lime-green  : hsl(145, 58%, 55%);
@@ -101,10 +101,11 @@ body{
 .box{
 width: 100%;
 height: 47%;
-background-color: var(--dark-blue);
 border-radius: 15px;
 overflow: hidden;
 display: flex;
+position: relative;
+
 align-items: flex-end;
 }
 .second{
@@ -113,8 +114,61 @@ align-items: flex-end;
     justify-content: space-between;
 }
 .info-box{
-    background-color: var(--desaturated-blue);
+    background-color: var(--dark-blue);
     width: 100%;
     height: 80%;
+    padding: 20px;
     border-radius: 15px;
+    cursor: pointer;
+    z-index: 1;
+}
+.icon{
+position: absolute;
+top: -5px;
+right: 20px;
+}
+.info-box:hover{
+background-color: var(--desaturated-blue);
+}
+.info-box h2{
+    font-size: 55px;
+    font-weight: 300;
+    margin-top: 25px;
+    margin-bottom: 10px;
+    color: white;
+}
+.info-box span{
+    font-weight: 300;
+    /* margin-top: 25px; */
+    color: var(--pale-blue);
+    font-size: 16px;
+}
+
+/* Colors Box */
+.orange{
+    background-color: var(--light-orange);
+}
+.green{
+    background-color: var(--lime-green);
+}
+.bluesky{
+    background-color: var(--soft-blue);
+}
+.pink{
+    background-color: var(--light-red);
+}
+.yellow{
+    background-color: var(--soft-orange);
+}
+.purple{
+    background-color:var(--violet);
+}
+/* Header Box */
+.header-box{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+   
+
 }
