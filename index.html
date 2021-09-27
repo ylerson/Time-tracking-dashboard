@@ -8,6 +8,9 @@
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <link rel="stylesheet" href="style.css">
+  
+  <script src="data.json"></script>
+
   <title>Frontend Mentor | Time tracking dashboard</title>
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
@@ -38,15 +41,15 @@
       </div>
       <div class="menu-time">
         <ul>
-          <li>
+          <li class="time">
             Daily
 
           </li>
-          <li>
+          <li class="time">
 
             Weekly
           </li>
-          <li>
+          <li class="time">
 
             Monthly
           </li>
@@ -65,8 +68,8 @@
                 fill="#BBC0FF" fill-rule="evenodd" />
             </svg>
           </div>
-          <h2>32Hrs</h2>
-          <span>Last Week - 7hrs</span>
+          <h2><span id="h-current-work">32</span>Hrs</h2>
+          <span>Last Week - <span id="h-previous-work">7</span>hrs</span>
         </div>
       </div>
       <div class="box green">
@@ -161,6 +164,9 @@
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
     Coded by <a href="#">Ylerson Almonte</a>.
   </div>
+
+  <script src="app.js"></script>
+
 </body>
 
 </html>
