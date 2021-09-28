@@ -1,9 +1,7 @@
-const time = document.querySelectorAll('.time');
-const items = document.querySelector('.item-profile')
-const item = items.children;
+const items = document.querySelectorAll('.item-profile')
 
-let data = 'daily'
 let variable;
+
 
 const current = {
   Work : document.getElementById('h-current'),
@@ -24,17 +22,6 @@ const previous = {
 
 }
 
-
-const container = {
-  Work        : 'Work',
-  Play        : 'Play',
-  Exercise    : 'Exercise',
-  'Self Care' : 'Self Care',
-  Study       : 'Study',
-  Social      : 'Social'
-
-}
-
   fetch("data.json")
     .then(response => response.json())
     .then(json => {
@@ -42,56 +29,38 @@ const container = {
      
   });
 
-  
-time.forEach(t =>{
-  t.addEventListener('click', ()=>{
-      let hashUrl; 
-      window.location.hash = hashUrl
-      
+  for(let i = 0; i < items.length; i++){
 
-      function locationHashChanged() {
+    items[i].addEventListener('click', ()=>{
+      var current = document.getElementsByClassName("active");
 
-        if(location.hash != 'undefined'){
-
-
-          for(i =0; i < item; i++){
-
-            const hash = location.hash.split('#')
-            console.log(hash)
-            item[i].classList.add('active');
-
-          }
-         
-
-        }
+      if (current.length > 0) {
+        current[0].className = current[0].className.replace(" active", "");
       }
-      
+
+      items[i].className += " active";
+
       window.onhashchange = locationHashChanged;
-      
-      // console.log(hashUrl);
-      // const hash = hashUrl.split('#')
-      // console.log(hash[1])
 
-      data = t.innerText.toLowerCase();
-
-        variable.forEach(e => {
-          
-
-          const type = current[e.title];
-
-          if(e.title == container[e.title]){
-            
-            current[e.title].innerText = e.timeframes[data].current
-            previous[e.title].innerText = e.timeframes[data].previous
-             
-               
-              
-
-                // hp.innerText = t.innerText ? d.innerText : e.timeframes[data].previous
-           
-            }
-           
-        });
     })
-})
+
+
+  }
+
+  function locationHashChanged() {
+
+
+    const hash = location.hash.split('#')
+    const hashFirst = hash[1]
+
+    variable.forEach(e => {
+   
+        current[e.title].innerText = e.timeframes[hashFirst].current
+        previous[e.title].innerText = e.timeframes[hashFirst].previous
+       
+    });
+
+  }
+
+
 
